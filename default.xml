@@ -20,7 +20,7 @@
     <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE" />
     <linkfile dest="WORKSPACE.bzlmod" src="kleaf/bzlmod/bazel.WORKSPACE.bzlmod" />
   </project>
-  <project path="common/gki" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-10_r22">
+  <project path="common/gki" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-10_r30">
     <linkfile dest="common/build.config.constants" src="build.config.constants" />
     <linkfile dest="common/modules.bzl" src="modules.bzl" />
   </project>
