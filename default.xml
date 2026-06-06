@@ -14,16 +14,13 @@
            sync-c="true"
            sync-j="4" />
 
-  <project path="aosp" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-08_r32">
-    <linkfile dest="common/build.config.constants" src="build.config.constants" />
-    <linkfile dest="common/modules.bzl" src="modules.bzl" />
-  </project>
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" remote="aosp" />
   <project path="build/kernel" name="kernel/build" remote="aosp">
     <linkfile dest="tools/bazel" src="kleaf/bazel.sh" />
     <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE" />
     <linkfile dest="WORKSPACE.bzlmod" src="kleaf/bzlmod/bazel.WORKSPACE.bzlmod" />
   </project>
+  <project path="common/gki" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-10_r22" />
   <project path="external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" />
   <project path="external/bazelbuild-bazel-central-registry" name="platform/external/bazelbuild-bazel-central-registry" remote="aosp" />
   <project path="external/bazelbuild-platforms" name="platform/external/bazelbuild-platforms" remote="aosp" />
@@ -33,6 +30,7 @@
   <project path="external/bazelbuild-rules_license" name="platform/external/bazelbuild-rules_license" remote="aosp" />
   <project path="external/bazelbuild-rules_pkg" name="platform/external/bazelbuild-rules_pkg" remote="aosp" />
   <project path="external/bazelbuild-rules_python" name="platform/external/bazelbuild-rules_python" remote="aosp" />
+  <project path="external/bionic" name="platform/bionic" remote="aosp" revision="build-tools" />
   <project path="external/libcap-ng" name="platform/external/libcap-ng" remote="aosp" />
   <project path="external/libcap" name="platform/external/libcap" remote="aosp" />
   <project path="external/lz4" name="platform/external/lz4" remote="aosp" />
@@ -63,7 +61,6 @@
     <linkfile dest="download_prebuilts.py" src="google/common/scripts/download_prebuilts.py" />
     <linkfile dest="run_kunit_tests_on_device.sh" src="google/common/scripts/run_kunit_tests_on_device.sh" />
     <linkfile dest="common/BUILD.bazel" src="google/common/kleaf/common.BUILD.bazel" />
-    <linkfile dest="aosp-with-prebuilts/BUILD.bazel" src="google/common/kleaf/aosp-with-prebuilts.BUILD.bazel" />
     <linkfile dest="MODULE.bazel" src="google/common/kleaf/bazel.MODULE.bazel" />
     <linkfile dest="build_gs101.sh" src="google/gs101/build_gs101.sh" />
     <linkfile dest=".c1.bazelrc" src="google/gs101/device.bazelrc" />
