@@ -92,6 +92,8 @@
     <linkfile dest=".d12.bazelrc" src="google/muzel/device.bazelrc" />
     <linkfile dest="build_rango.sh" src="google/rango/build_rango.sh" />
     <linkfile dest=".d13.bazelrc" src="google/rango/device.bazelrc" />
+    <linkfile dest="build_stallion.sh" src="google/stallion/build_stallion.sh" />
+    <linkfile dest=".d14.bazelrc" src="google/stallion/device.bazelrc" />
   </project>
   <project path="private/google-modules" name="LineageOS/android_kernel_google_gs-6.6_google-modules" />
 </manifest>
