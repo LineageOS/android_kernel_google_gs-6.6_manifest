@@ -20,7 +20,7 @@
     <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE" />
     <linkfile dest="WORKSPACE.bzlmod" src="kleaf/bzlmod/bazel.WORKSPACE.bzlmod" />
   </project>
-  <project path="common/gki" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-10_r22" />
+  <project path="common/gki" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-10_r30" />
   <project path="external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" />
   <project path="external/bazelbuild-bazel-central-registry" name="platform/external/bazelbuild-bazel-central-registry" remote="aosp" />
   <project path="external/bazelbuild-platforms" name="platform/external/bazelbuild-platforms" remote="aosp" />
