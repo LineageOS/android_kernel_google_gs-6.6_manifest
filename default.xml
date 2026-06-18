@@ -15,14 +15,11 @@
            sync-j="4" />
 
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" remote="aosp" />
-  <project path="build/kernel" name="kernel/build" remote="aosp">
-    <linkfile dest="tools/bazel" src="kleaf/bazel.sh" />
-    <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE" />
-    <linkfile dest="WORKSPACE.bzlmod" src="kleaf/bzlmod/bazel.WORKSPACE.bzlmod" />
-  </project>
-  <project path="common/gki" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-10_r30">
+  <project path="build/kernel" name="kernel/build" remote="aosp" />
+  <project path="common/gki" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2026-01_r27">
     <linkfile dest="common/build.config.constants" src="build.config.constants" />
     <linkfile dest="common/modules.bzl" src="modules.bzl" />
+    <linkfile dest=".clang-format" src=".clang-format" />
   </project>
   <project path="external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" />
   <project path="external/bazelbuild-bazel-central-registry" name="platform/external/bazelbuild-bazel-central-registry" remote="aosp" />
@@ -34,69 +31,48 @@
   <project path="external/bazelbuild-rules_pkg" name="platform/external/bazelbuild-rules_pkg" remote="aosp" />
   <project path="external/bazelbuild-rules_python" name="platform/external/bazelbuild-rules_python" remote="aosp" />
   <project path="external/bionic" name="platform/bionic" remote="aosp" revision="main-kernel" />
-  <project path="external/libcap-ng" name="platform/external/libcap-ng" remote="aosp" />
-  <project path="external/libcap" name="platform/external/libcap" remote="aosp" />
   <project path="external/lz4" name="platform/external/lz4" remote="aosp" />
   <project path="external/pigz" name="platform/external/pigz" remote="aosp" />
   <project path="external/python/absl-py" name="platform/external/python/absl-py" remote="aosp" />
-  <project path="external/stardoc" name="platform/external/stardoc" remote="aosp" />
   <project path="external/toybox" name="platform/external/toybox" remote="aosp" />
   <project path="external/zlib" name="platform/external/zlib" remote="aosp" />
   <project path="external/zopfli" name="platform/external/zopfli" remote="aosp" />
-  <project path="prebuilts/asuite" name="platform/prebuilts/asuite" clone-depth="1" remote="aosp" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" remote="aosp" />
   <project path="prebuilts/clang-tools" name="platform/prebuilts/clang-tools" clone-depth="1" remote="aosp" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" remote="aosp" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" remote="aosp" />
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" remote="aosp" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" />
   <project path="prebuilts/ndk-r26" name="toolchain/prebuilts/ndk/r26" clone-depth="1" remote="aosp" />
   <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" remote="aosp" />
-  <project path="prebuilts/tradefed" name="platform/tools/tradefederation/prebuilts" clone-depth="1" remote="aosp" />
   <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" remote="aosp" />
 
   <project path="manifest" name="LineageOS/android_kernel_google_gs-6.6_manifest" />
   <project path="prebuilts/gki" name="LineageOS/android_kernel_google_gs-6.6_prebuilts_gki" clone-depth="1" />
   <project path="private/devices" name="LineageOS/android_kernel_google_gs-6.6_devices">
-    <linkfile dest="device.bazelrc" src="google/common/device.bazelrc" />
+    <linkfile dest="AGENTS.md" src="google/common/workspace/root.AGENTS.md" />
+    <linkfile dest="MODULE.bazel" src="google/common/workspace/root.MODULE.bazel" />
+    <linkfile dest="common/BUILD.bazel" src="google/common/workspace/common.BUILD.bazel" />
+    <linkfile dest="private/.clang-format" src="google/common/workspace/private.clang-format" />
+    <linkfile dest="tools/bazel" src="google/common/tools/bazel.sh" />
+    <linkfile dest="tools/build_dist.sh" src="google/common/tools/build_dist.sh" />
+    <linkfile dest="tools/build_compile_commands.sh" src="google/common/tools/build_compile_commands.sh" />
     <linkfile dest="update_symbol_list.sh" src="google/common/update_symbol_list.sh" />
     <linkfile dest="download_prebuilts.py" src="google/common/scripts/download_prebuilts.py" />
     <linkfile dest="run_kunit_tests_on_device.sh" src="google/common/scripts/run_kunit_tests_on_device.sh" />
-    <linkfile dest="common/BUILD.bazel" src="google/common/kleaf/common.BUILD.bazel" />
-    <linkfile dest="MODULE.bazel" src="google/common/kleaf/bazel.MODULE.bazel" />
-    <linkfile dest=".c1.bazelrc" src="google/gs101/device.bazelrc" />
     <linkfile dest="build_raviole.sh" src="google/raviole/build_raviole.sh" />
-    <linkfile dest=".d1.bazelrc" src="google/raviole/device.bazelrc" />
     <linkfile dest="build_bluejay.sh" src="google/bluejay/build_bluejay.sh" />
-    <linkfile dest=".d2.bazelrc" src="google/bluejay/device.bazelrc" />
-    <linkfile dest=".c2.bazelrc" src="google/gs201/device.bazelrc" />
     <linkfile dest="build_pantah.sh" src="google/pantah/build_pantah.sh" />
-    <linkfile dest=".d3.bazelrc" src="google/pantah/device.bazelrc" />
     <linkfile dest="build_lynx.sh" src="google/lynx/build_lynx.sh" />
-    <linkfile dest=".d4.bazelrc" src="google/lynx/device.bazelrc" />
     <linkfile dest="build_felix.sh" src="google/felix/build_felix.sh" />
-    <linkfile dest=".d5.bazelrc" src="google/felix/device.bazelrc" />
     <linkfile dest="build_tangorpro.sh" src="google/tangorpro/build_tangorpro.sh" />
-    <linkfile dest=".d6.bazelrc" src="google/tangorpro/device.bazelrc" />
-    <linkfile dest=".c3.bazelrc" src="google/zuma/device.bazelrc" />
     <linkfile dest="build_shusky.sh" src="google/shusky/build_shusky.sh" />
-    <linkfile dest=".d7.bazelrc" src="google/shusky/device.bazelrc" />
     <linkfile dest="build_akita.sh" src="google/akita/build_akita.sh" />
-    <linkfile dest=".d8.bazelrc" src="google/akita/device.bazelrc" />
-    <linkfile dest=".c4.bazelrc" src="google/zumapro/device.bazelrc" />
     <linkfile dest="build_caimito.sh" src="google/caimito/build_caimito.sh" />
-    <linkfile dest=".d9.bazelrc" src="google/caimito/device.bazelrc" />
     <linkfile dest="build_comet.sh" src="google/comet/build_comet.sh" />
-    <linkfile dest=".d10.bazelrc" src="google/comet/device.bazelrc" />
     <linkfile dest="build_tegu.sh" src="google/tegu/build_tegu.sh" />
-    <linkfile dest=".d11.bazelrc" src="google/tegu/device.bazelrc" />
-    <linkfile dest=".c5.bazelrc" src="google/lga/device.bazelrc" />
     <linkfile dest="build_muzel.sh" src="google/muzel/build_muzel.sh" />
-    <linkfile dest=".d12.bazelrc" src="google/muzel/device.bazelrc" />
     <linkfile dest="build_rango.sh" src="google/rango/build_rango.sh" />
-    <linkfile dest=".d13.bazelrc" src="google/rango/device.bazelrc" />
     <linkfile dest="build_stallion.sh" src="google/stallion/build_stallion.sh" />
-    <linkfile dest=".d14.bazelrc" src="google/stallion/device.bazelrc" />
   </project>
   <project path="private/google-modules" name="LineageOS/android_kernel_google_gs-6.6_google-modules" />
 </manifest>
