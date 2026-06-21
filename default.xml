@@ -9,7 +9,7 @@
            review="android-review.googlesource.com"
            revision="refs/heads/main-kernel-build-2024" />
 
-  <default revision="refs/heads/lineage-23.2"
+  <default revision="refs/heads/lineage-24.0"
            remote="github"
            sync-c="true"
            sync-j="4" />
