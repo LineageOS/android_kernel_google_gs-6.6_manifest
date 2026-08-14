@@ -14,7 +14,7 @@
            sync-c="true"
            sync-j="4" />
 
-  <project path="aosp" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-08_r34">
+  <project path="aosp" name="kernel/common" remote="aosp" revision="refs/tags/android15-6.6-2025-08_r35">
     <linkfile dest="common/build.config.constants" src="build.config.constants" />
     <linkfile dest="common/modules.bzl" src="modules.bzl" />
   </project>
